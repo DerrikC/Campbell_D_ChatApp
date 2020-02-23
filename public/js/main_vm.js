@@ -21,6 +21,7 @@ function appendMessage(message) {
     vm.messages.push(message);
 }
 
+
 const vm = new Vue({
     data: {
         socketID: "",
@@ -40,6 +41,7 @@ const vm = new Vue({
                 content: this.message,
                 name: this.nickname || "anonymous"
             })
+
 
             this.message = "";
         }
