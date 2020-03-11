@@ -1,6 +1,7 @@
 // imports always go first - if we're importing anything
 import ChatMessage from "./modules/ChatMessage.js";
 
+
 const socket = io();
 
 // the packet is whatever data we send through with the connect event
@@ -21,16 +22,22 @@ function appendMessage(message) {
     vm.messages.push(message);
 }
 
+// //emoji picker set up with vue
+Vue.use(EmojiPicker)
 
 const vm = new Vue({
+    el:'#app',
     data: {
         socketID: "",
         message: "",
         nickname: "",
-        messages: []
+        messages: [],
+
     },
 
+
     methods: {
+
         // emit a message event to the server so that it
         // this will send this to anyone who's connected to the application
         dispatchMessage() {
@@ -40,11 +47,25 @@ const vm = new Vue({
             socket.emit('chat_message', { 
                 content: this.message,
                 name: this.nickname || "anonymous"
-            })
-
+            }),
 
             this.message = "";
-        }
+            
+        },
+
+        //adding methods that add emojis to messages ( they are appended to the messages )
+        append(emoji) {
+            this.message += emoji
+        },
+
+        //adding directives
+        directives: {
+                focus: {
+                  inserted(el) {
+                    el.focus()
+                  },
+                },
+              },
     },
 
     mounted: function() {

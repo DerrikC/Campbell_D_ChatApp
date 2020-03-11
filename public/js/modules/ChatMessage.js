@@ -15,8 +15,9 @@ export default {
     data: function() {
         return { 
             message: "hello from the template",
-            matchedID: this.$parent.socketID == this.msg.id
+            matchedID: this.$parent.socketID == this.msg.id,
         };
-    }
+    },
 
 }
+
