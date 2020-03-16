@@ -14,18 +14,22 @@
 </head>
 
 <body>
-
+	<header>
+		<img  src="images/lunachat_logo.svg" class="logo" alt="luna-chat-logo">
+	</header>
+	
 
 	<main id="app">
 	
 		<section class="form-container">
 			<form>
 
-			<h1>CHAT APP</h1>
-			<label for="nickname">Your Nickname (optional)</label>
+			<!-- <h1>CHAT APP</h1> -->
+			<br>
+			<label for="nickname"> Nickname (optional)</label>
 			<input v-model="nickname" class="nickname" placeholder="What is your nickname?" type="text" autocomplete="off" id="textarea"></input>
 
-				<label for="message">Something to say...?</label>
+				<label for="message">Write a message...</label>
 				<div class="wrapper">
 				<textarea v-model="message" class="message" type="text" autocomplete="off" id="textarea"></textarea>
 				

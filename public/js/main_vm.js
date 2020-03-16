@@ -4,6 +4,7 @@ import ChatMessage from "./modules/ChatMessage.js";
 
 const socket = io();
 
+
 // the packet is whatever data we send through with the connect event
 // from the server
 
