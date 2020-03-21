@@ -1,9 +1,10 @@
-![lunachat Logo](/public/images/lunachat_logo.svg)
+![lunachat Logo](/public/images/lunachat_logo_readme.svg)
 
 # Luna Chat - Derrik's Chat App
 
 ## Description
 
+The goal of this project was to create a chat application that utilized components with socket.IO. I included an emoji functionality and designed the application in a dark mode. 
 
 ## Download Quick Start - Luna Chat App
 
@@ -19,10 +20,10 @@ Express
 Node.js
 
 ## Framework
-Vue.js
+cdn vue.js
 
 ## Installing
-In the project, run the following dependency:
+In the project, run the following in the terminal:
 
 ```console
 $ npm install
