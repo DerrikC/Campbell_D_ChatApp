@@ -32,6 +32,11 @@ io.on('connection', function(socket) { // socket is your connection
         io.emit('new_message', { id: socket.id, message: msg })
     })
 
+    //broadcast typing
+    // socket.on('typing', function(nickname){
+    //     socket.broadcast.emit('typing', nickname);
+    // });
+
     socket.on('disconnect', function() {
         console.log('a user has disconnected');
     })
