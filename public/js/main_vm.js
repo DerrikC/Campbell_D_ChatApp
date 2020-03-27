@@ -4,6 +4,11 @@ import ChatMessage from "./modules/ChatMessage.js";
 
 const socket = io();
 
+//typing display
+// var feedback = document.getElementsByClassName('feedback'),
+//     message = document.getElementsByClass('message'),
+//     nickname = document.getElementsByClassName('nickname');
+
 
 // the packet is whatever data we send through with the connect event
 // from the server
@@ -82,3 +87,13 @@ const vm = new Vue({
 socket.addEventListener('connected', setUserId);
 socket.addEventListener('disconnect', showDisconnectMessage);
 socket.addEventListener('new_message', appendMessage);
+
+//typing listener
+// message.addEventListener('keypress', function(){
+//     socket.emit('typing', nickname.value);
+//     });
+
+//emit broadcasting
+// socket.on('typing', function(nickname){
+//     feedback.innerHTML = '<p><em>' + msg + 'is typing a message... </em></p>'
+//     });
