@@ -11,6 +11,8 @@
   "dependencies": {
     "emoji-vue": "^0.2.4",
     "express": "^4.16.4",
-    "socket.io": "^2.2.0"
+    "moment": "^2.27.0",
+    "socket.io": "^2.2.0",
+    "vue-chat-scroll": "^1.4.0"
   }
 }
