@@ -49,4 +49,5 @@ MIT
 Trevor Van Rys - Fanshawe College
 
 https://www.vuescript.com/powerful-vue-emoji-picker/
+https://github.com/theomessin/vue-chat-scroll?ref=madewithvuejs.com
 
