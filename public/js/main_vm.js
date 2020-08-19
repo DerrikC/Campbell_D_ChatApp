@@ -4,15 +4,6 @@ import ChatMessage from "./modules/ChatMessage.js";
 
 const socket = io();
 
-//message from server
-// socket.on('message', message => {
-//     console.log(message);
-//     outputMessage(message);
-   
-//     //scroll down
-//     chatMessages.scrollTop = chatMessages.scrollHeight;
-// });
-
 // this is data destructuring. Go look it up on MDN https://developer.mozilla.org/en-US/
 function setUserId({sID}) {
     //debugger;

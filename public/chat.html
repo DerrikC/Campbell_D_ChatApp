@@ -8,9 +8,8 @@
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous" />
 	<link href="https://fonts.googleapis.com/css?family=Noto+Sans&display=swap" rel="stylesheet">
+	<script src="https://cdn.jsdelivr.net/npm/vue-chat-scroll/dist/vue-chat-scroll.min.js"></script>
 	<script src="https://unpkg.com/vue"></script>
-	
-	
 </head>
 
 <body>
@@ -19,10 +18,9 @@
 		<a href="index.html" alt="logout"><i class="fas fa-sign-out-alt fa-lg"></i></a>
 	</div>
 	
-
 	<main id="app">
 		
-		<section class="messages">
+		<section class="messages" v-chat-scroll>
 			<ul id="messages">
 			
 				<!-- render a new message component for every message -->
@@ -83,9 +81,7 @@
 				
 				 <input @click.prevent="dispatchMessage" type="submit" value="Send">
 
-				
 			</form>
-
 
 		</section>
 
@@ -97,6 +93,7 @@
 
 	<script src="/socket.io/socket.io.js"></script>
 	<script type="module" src="js/main_vm.js"></script>
+	<!-- <script type="module" src="js/scrollDown.js"></script> -->
 	
 </body>
 

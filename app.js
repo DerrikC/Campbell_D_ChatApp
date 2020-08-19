@@ -1,3 +1,8 @@
+import Vue from 'vue'
+
+import VueChatScroll from 'vue-chat-scroll'
+Vue.use(VueChatScroll)
+
 var express = require('express');
 var app = express();
 
