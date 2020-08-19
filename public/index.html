@@ -15,28 +15,25 @@
 				<img  src="images/lunachat_logo.svg" class="logo" alt="luna-chat-logo">
 			</header>
 			<main class="enter-main">
-				<form action="chat.html">
+				<form id="form" action="chat.html" method="GET">
 					<div class="form-control">
-						<label for="username">Username</label>
+						<label for="">Email</label>
 						<input
-							type="text"
-							name="username"
-							id="username"
-							placeholder="Enter username..."
+							type="email"
+							name="email"
+							id="email"
+							class="email"
+							placeholder="Enter email..."
 							required
 						/>
 					</div>
-					<!-- <div class="form-control">
-						<label for="room">Room</label>
-						<select name="room" id="room">
-							<option value="Technology">Technology</option>
-							<option value="Gaming">Gaming</option>
-							<option value="Music">Music</option>
-						</select>
-					</div> -->
+	
+					<!-- <input type="submit" value="Submit" class="btn" /> -->
 					<button type="submit" class="btn">Enter Chat</button>
 				</form>
 			</main>
 		</div>
+
+		<script type="module" src="js/emailValidation.js"></script>
 	</body>
 </html>
