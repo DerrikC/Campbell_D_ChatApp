@@ -1,17 +1,17 @@
 // imports always go first - if we're importing anything
 import ChatMessage from "./modules/ChatMessage.js";
-
+// const chatMessages = document.getElementById('messages');
 
 const socket = io();
 
-//typing display
-// var feedback = document.getElementsByClassName('feedback'),
-//     message = document.getElementsByClass('message'),
-//     nickname = document.getElementsByClassName('nickname');
-
-
-// the packet is whatever data we send through with the connect event
-// from the server
+//message from server
+// socket.on('message', message => {
+//     console.log(message);
+//     outputMessage(message);
+   
+//     //scroll down
+//     chatMessages.scrollTop = chatMessages.scrollHeight;
+// });
 
 // this is data destructuring. Go look it up on MDN https://developer.mozilla.org/en-US/
 function setUserId({sID}) {
@@ -40,7 +40,6 @@ const vm = new Vue({
         messages: [],
 
     },
-
 
     methods: {
 
@@ -83,17 +82,6 @@ const vm = new Vue({
     }
 }).$mount("#app");
 
-
 socket.addEventListener('connected', setUserId);
 socket.addEventListener('disconnect', showDisconnectMessage);
 socket.addEventListener('new_message', appendMessage);
-
-//typing listener
-// message.addEventListener('keypress', function(){
-//     socket.emit('typing', nickname.value);
-//     });
-
-//emit broadcasting
-// socket.on('typing', function(nickname){
-//     feedback.innerHTML = '<p><em>' + msg + 'is typing a message... </em></p>'
-//     });

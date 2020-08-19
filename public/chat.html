@@ -15,7 +15,8 @@
 
 <body>
 	<div class="chat-header">
-		<img  src="images/lunachat_logo.svg" class="logo" alt="luna-chat-logo">
+		<img src="images/lunachat_logo.svg" class="logo" alt="luna-chat-logo">
+		<a href="index.html" alt="logout"><i class="fas fa-sign-out-alt fa-lg"></i></a>
 	</div>
 	
 
@@ -25,7 +26,8 @@
 			<ul id="messages">
 			
 				<!-- render a new message component for every message -->
-				<newmessage v-for="message in messages" :msg="message"></newmessage>
+				<newmessage v-for="message in messages" class="newmessage" :msg="message"></newmessage>
+				
 			</ul>
 		</section>
 
@@ -42,11 +44,11 @@
 
 				<label for="message">Message</label>
 				<div class="wrapper">
-				<textarea v-model="message" class="message" type="text" autocomplete="off" id="textarea"></textarea>
+				<input v-model="message" class="message" type="text" autocomplete="off" id="textarea"></input>
 				
 				
 				<!-- emoji picker -->
-					<emoji-picker @emoji="append" :search="search">
+					<emoji-picker @emoji="append">
 					  <div
 						class="emoji-invoker"
 						slot="emoji-invoker"
@@ -61,11 +63,6 @@
 					  </div>
 					  <div slot="emoji-picker" slot-scope="{ emojis, insert, display }">
 						<div class="emoji-picker" :style="{ top: display.y + 'px', left: display.x + 'px' }">
-						  <div class="emoji-picker__search">
-							  
-							<!-- Can add a search filter for the emojis later -->
-							<!-- <input type="text" v-model="search" v-focus> -->
-						  </div>
 						  <div>
 							<div v-for="(emojiGroup, category) in emojis" :key="category">
 							  <h5>{{ category }}</h5>
@@ -84,9 +81,7 @@
 					</emoji-picker>
 				  </div>
 				
-		
-				
-				<input @click.prevent="dispatchMessage" type="submit" value="Send">
+				 <input @click.prevent="dispatchMessage" type="submit" value="Send">
 
 				
 			</form>
